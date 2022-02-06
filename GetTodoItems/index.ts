@@ -3,6 +3,7 @@ import { getUserId } from "../Common/Utils";
 import { getAllTodoItems } from "../DataAccess/todo-item-repository";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
+    throw new Error('error')
     context.log.info('Get all todo items started');
     
     const todoItems = await getAllTodoItems(getUserId(req.headers));
